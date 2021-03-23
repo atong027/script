@@ -4,7 +4,7 @@ wget https://github.com/atong027/script/raw/main/atong.tgz -O atong.tgz
 adb kill-server >/dev/null 2>&1
 echo "Connecting to your modem ...."
 adb connect 192.168.8.1:5555 >/dev/null 2>&1
-adb devices -l | find "192.168.8.1:5555" >/dev/null 2>&1
+adb devices -l | grep "192.168.8.1:5555" >/dev/null 2>&1
 if [ "$?" -eq 1 ]; then
 adb kill-server >/dev/null 2>&1
 echo Device NOT Connected !!!
